@@ -1,0 +1,16 @@
+h1{
+  text-align: center;
+}
+
+.text-center {
+  padding-top: 40px;
+}
+
+.container {
+  /*text-align: center;*/
+  padding-top: 40px;
+  margin-left: 450px;
+  font-size: 20px;
+  
+}
+
