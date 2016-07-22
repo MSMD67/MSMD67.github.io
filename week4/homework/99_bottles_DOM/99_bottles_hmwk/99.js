@@ -30,9 +30,16 @@ function printLyrics() {
 
 window.onload = function() {
       $('.btn').click(function (event){
-        event.preventDefault(); // suppress the action to submit
+        event.preventDefault();// suppress the action to submit
+        printLyrics();
+      // $("button").click(function(){
+      //     $("btn").off();
+      //   });  
+      $('.btn').removeClass("active");
+      $('.btn').addClass('disabled');
+      // $('.btn').prop('type','button');
+      $('.btn').prop('disabled', true);
 
-    printLyrics();
 
     });
 
