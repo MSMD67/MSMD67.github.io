@@ -10,6 +10,37 @@ You'll add the ability to complete tasks in your favorite things list. Your prog
 
 */
 // alert('hi');
+// ---------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------
+
+// Firstly, you must be able to get input from the user.  
+// The following HTML was taken from the jquery_lab folder.
+    // <form>
+    //   <input id="new-thing" >
+    //   <input id="new-thing-button" type="submit" value="Create new thing">
+    // </form>
+// Line 19 is used to create an input box for the user.
+// Line 20 creates a button so that the input can be added to the list.
+// To set up functionality of the button, we start at liine 40.
+//
+// Firstly, we use the id for the button and create an onclick event
+// using '.click'.
+// Now we create a function to establish what we want to happen.
+//  
+//
+// 1. Use the event.preventDefault() to stop default action of button.
+// 2. Create var myList = $('#fav-list'), so that we can access the list.
+// 3. To get input from the user create var myNewThing = $('#new-thing').val();
+// 4. (.val) will allow us to set the variable myNewThing to whatever was inputted.
+// 5. Invoke the function, addToList(myList, myNewThing);
+// 6. Reset and clear "new thing", by using $('#new-thing').val('');
+// 
+// ------Function Creation-------    
+// Create function addToList that takes two parameters: list and newThing.
+// Create variable <newListItem> and set it to newThing;
+// Add <newListItem> to the list by accessing the 'fav-list'
+// and append by using ('<li>' + newListItem + '</li>') - see line 49.
+
 
 function addToList(list, newThing) {
 
@@ -22,16 +53,25 @@ function addToList(list, newThing) {
   // is one of the parameters that needs to be passed in.
  
   // list.innerHTML = newList;
-
-
-
 }
 
 
 
 window.onload = function() {
       $('#new-thing-button').click(function (event){
-        event.preventDefault(); // suppress the action to submit
+        event.preventDefault(); 
+      // The event.preventDefault() method stops the default action of an element from happening.
+      //
+      // For example:
+      //
+      // Prevent a submit button from submitting a form
+      // Prevent a link from following the URL
+      //
+      // Tip: Use the event.isDefaultPrevented() method to check whether 
+      // the preventDefault() method was called for the event. 
+      //
+      // link:  http://www.w3schools.com/jquery/event_isdefaultprevented.asp
+
      // YOUR CODE HERE!
      var myList = $('#fav-list');
      
@@ -46,11 +86,23 @@ window.onload = function() {
      addToList(myList, myNewThing);
 
 
-     $('#new-thing').value = '';
- 
+     // $('#new-thing').value = '';
+    $('#new-thing').val('');
 
     });
+// ---------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------
+    //   $('#new-thing-button').click(function (event){
+    //     event.preventDefault(); 
+    //     var myList = $('#fav-list');
+    //     var myNewThing = $('#new-thing').val();
 
+    //     addToList(myList, myNewThing);
 
+    //   $('#new-thing').val('');
+
+    // });
+// ---------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------
   };
 
