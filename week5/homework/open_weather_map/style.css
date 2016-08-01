@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+#first-section, #second-section {
+  padding-left: 100px;
+
+}
+
+ul > p {
+  margin-left: -41px;
+  padding-top: 20px;
+}

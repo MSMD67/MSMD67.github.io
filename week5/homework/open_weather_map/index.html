@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title></title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<h1>Open Weather Maps API</h1>
+	<hr>
+
+	<div id="first-section">
+		<h2>Current Weather in NYC</h2>
+		<div id="nyc-weather">
+			<ul id="weather-summary">
+			</ul>
+		</div>
+	</div>
+	<p></p>
+	<hr>
+	<div id="second-section">
+			<h2>Find out the weather in your area</h2>
+			<p>Enter your city and state/two letter country code.</p>
+			<p>Click refresh if you wish to reload the page.</p>
+			<br>
+				<form id="item-form">
+					<input type="text" id="new-city" placeholder="City">
+					<input type="text" id="new-state" placeholder="State">
+					<button id="clickme">Click</button>
+					<button id="refresh">Refresh</button>
+				</form>
+			<div id="your-weather">
+				<ul id="weather-summary2">
+				</ul>	
+			</div>
+
+	</div>
+
+	<hr>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="main.js" type="text/javascript" charset="utf-8" async defer></script>
+
+</body>
+</html>
