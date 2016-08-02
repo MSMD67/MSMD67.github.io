@@ -11,3 +11,16 @@ ul > p {
   margin-left: -41px;
   padding-top: 20px;
 }
+
+ #new-city, #new-state 
+    {
+     font-size:12pt;
+     height:20px;
+     width:200px;
+    }
+
+#clickme, #refresh {
+    font-size:12pt;
+     height:26px;
+     width:80px;
+}
