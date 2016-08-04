@@ -90,13 +90,16 @@ $(document).ready(function () {
         // function changeColor(data){
         //     var temp = parseInt(data.main.temp);     
         //     // console.log(temp);
-        //     if (temp < 50){
+        //     if (temp < 65){
         //       $('body').css('background-color', 'blue');
-        //     } else if (temp <= 85){
-        //       $('body').css('background-color', 'purple');
         //     } else {
         //       $('body').css('background-color', 'red');
         //     }
+        //     // } else if (temp <= 85){
+        //     //   $('body').css('background-color', 'purple');
+        //     // } else {
+        //     //   $('body').css('background-color', 'red');
+        //     // }
         // }
 
 
@@ -146,9 +149,9 @@ $(document).ready(function () {
             // console.log('hi');
             // console.log(data.name);
             // console.log('Temp: ' + data.main.temp);
-            addToDOM(data);
+            // addToDOM(data);
             setPicture(data);
-            //changeColor(data);
+            // changeColor(data);
             $('#new-city').val(''); 
             $('#new-state').val('');
             $('input:text:first').focus();
