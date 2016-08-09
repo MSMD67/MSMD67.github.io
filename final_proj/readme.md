@@ -9,7 +9,7 @@ Docs and libraries used:
 
 - jQuery
 - API docs from GitHub 
-##- Bootstrap
+- Bootstrap
 
 
 Upon creation of this page, it will be incorporated into a personal profile page that 
