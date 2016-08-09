@@ -11,7 +11,7 @@ Docs and libraries used:
 - API docs from GitHub 
 - Bootstrap
 
-##
-Upon creation of this page, it will be incorporated into a personal profile page that 
+
+##Upon creation of this page, it will be incorporated into a personal profile page that 
 will be used for my job search.
-##
+
