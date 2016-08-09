@@ -1,4 +1,4 @@
-Objective:  
+##Objective  
 
 To display repos within GitHub and have user view commit messages within each repo.
 Each commit message will allow user to view the code associated with that particular commit
