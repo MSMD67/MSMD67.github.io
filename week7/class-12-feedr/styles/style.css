@@ -212,6 +212,7 @@ nav ul ul li {
 .article .articleContent {
   width: 70%;
   float: left;
+  padding-bottom: 15px;
 }
 
 .article .articleContent a {
@@ -225,7 +226,10 @@ nav ul ul li {
 
 .article .articleContent h6 {
   margin-top: 0;
+  margin-left: -10px;
   color: #666;
+  display: inline;
+  padding:10px;
 }
 
 .article .impressions {

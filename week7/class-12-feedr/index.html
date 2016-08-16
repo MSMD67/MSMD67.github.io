@@ -20,10 +20,10 @@
             <nav>
               <ul>
                 <li><a href="#">News Source: <span>Source Name</span></a>
-                  <ul>
-                      <li><a href="#">Source 1</a></li>
+                  <ul id="sources">
+<!--                       <li><a href="#">Source 1</a></li>
                       <li><a href="#">Source 2</a></li>
-                      <li><a href="#">Source 3</a></li>
+                      <li><a href="#">Source 3</a></li> -->
                   </ul>
                 </li>
               </ul>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <section id="main" class="container">
-          <article class="article">
+<!--           <article class="article">
             <section class="featuredImage">
               <img src="images/article_placeholder_1.jpg" alt="" />
             </section>
@@ -58,8 +58,49 @@
               526
             </section>
             <div class="clearfix"></div>
-          </article>
-          <article class="article">
+          </article> -->
+        </section>
+
+
+<!-- ARTICLE TEMPLATE -->
+
+
+        <script id="article-template" type="text/x-handlebars-template">
+          <section id="main" class="container">
+            {{#each feed}}
+            <article class="article">
+              <section class="featuredImage">
+                <img src="images/article_placeholder_1.jpg" alt="" />
+              </section>
+              <section class="articleContent">
+                  <a href="{{content.media.images.original_url}}"><h3>{{content.title_alt}}</h3></a>
+                  <p>Author(s): {{content.author}}</p>
+                  {{#each content.tags}}
+                    <h6>{{display}}</h6>
+                  {{/each}}  
+              </section>
+               
+              <section class="impressions">
+               {{diggs.count}}
+              </section>
+              
+              <div class="clearfix"></div>
+            </article>
+          {{/each}}
+          </section>
+        </script>
+            
+
+
+
+    
+        <!-- TITLE TEMPLATE-->   
+        <script id="title-template" type="text/x-handlebars-template">
+            <h1>{{title}}</h1>
+            <p>{{description}}</p>    
+        </script>
+
+ <!--          <article class="article">
             <section class="featuredImage">
               <img src="images/article_placeholder_2.jpg" alt="" />
             </section>
@@ -97,13 +138,14 @@
               526
             </section>
             <div class="clearfix"></div>
-          </article>
+          </article> -->
         </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/helperUtils.js"></script>
         <script src="js/app.js"></script>
+        <script src="handlebars.js"></script>
 
     </body>
 </html>
