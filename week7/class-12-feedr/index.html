@@ -21,7 +21,7 @@
               <ul>
                 <li><a href="#">News Source: <span>Source Name</span></a>
                   <ul id="sources">
-<!--                       <li><a href="#">Source 1</a></li>
+<!--                  <li><a href="#">Source 1</a></li>
                       <li><a href="#">Source 2</a></li>
                       <li><a href="#">Source 3</a></li> -->
                   </ul>
@@ -70,10 +70,10 @@
             {{#each feed}}
             <article class="article">
               <section class="featuredImage">
-                <img src="images/article_placeholder_1.jpg" alt="" />
+                <img src="{{content.media.images.[0].url}}" alt="" />
               </section>
               <section class="articleContent">
-                  <a href="{{content.media.images.original_url}}"><h3>{{content.title_alt}}</h3></a>
+                  <a href="{{content.original_url}}"><h3>{{content.title_alt}}</h3></a>
                   <p>Author(s): {{content.author}}</p>
                   {{#each content.tags}}
                     <h6>{{display}}</h6>
@@ -90,56 +90,7 @@
           </section>
         </script>
             
-
-
-
-    
-        <!-- TITLE TEMPLATE-->   
-        <script id="title-template" type="text/x-handlebars-template">
-            <h1>{{title}}</h1>
-            <p>{{description}}</p>    
-        </script>
-
- <!--          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_2.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_2.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_1.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article> -->
-        </section>
+        <!-- </section> -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>

@@ -206,7 +206,7 @@ nav ul ul li {
 
 .article .featuredImage img {
   max-width: 100%;
-  border-radius: 50px;
+  border-radius: 0px;
 }
 
 .article .articleContent {
