@@ -2,31 +2,67 @@
 var urlArr = [];
 var repoNameArr = [];
 
+var counter = 0;
+var count = 0;
+
+
 $(document).ready(function () {
 
-    $.ajax({
-      type: "GET",
-      url: "https://api.github.com/users/MSMD67/repos",
-      success: function(repoList) {
+    var panel = '<form id="item-form">'+
+                  '<div class="form-group">' +
+                    '<input type="ID" class="form-control" id="userID" autofocus="autofocus" placeholder="Type in GitHub User ID then press ENTER">' +
+                  '</div>' +
+                '</form>';
 
-        for (var i = 0; i < repoList.length; i++) {
-          var repoEntry = buildRepo(repoList[i]);
-          $(".container").append(repoEntry);
+    $('.container').append(panel);
+    
+    $('#item-form').submit(function (event) {
+      event.preventDefault();  
+      count = 0;  
+     
+    $('.panel').remove();
+    $('p').remove();
+    $('.avatar').remove();
 
-        }
+    var input = $('#userID').val();
+     
+      $.ajax({
+        type: "GET",
+        url: "https://api.github.com/users/" + input + "/repos",
+        success: function(repoList) {
+          var image = repoList[0].owner.avatar_url;
+          var name =  repoList[0].owner.login;
 
-      },
+          $('.container')
+                .append('<p id="title">You are ' + name + ' and this is your avatar.</p>')
+                .append('<img class="avatar" src="' + image + '">');
 
-      error: function(jqXHR, textstatus, errorThrown) {
-          console.log(teststatus);
-          console.log(jqXHR);
-          console.log(errorThrown);
-      }
-    }); // closes the first AJAX call.
 
-  
-  var counter = 0;
-  var count = 0;
+          for (var i = 0; i < repoList.length; i++) {
+            var repoEntry = buildRepo(repoList[i]);
+            $(".container").append(repoEntry);
+
+          }
+
+        },
+
+        error: function(jqXHR, textstatus, errorThrown) {
+            console.log(teststatus);
+            console.log(jqXHR);
+            console.log(errorThrown);
+        },
+
+
+       }); // closes the first AJAX call.
+
+
+
+    $('#userID').val('');
+    $('#userID').focus;
+    console.log("after submit: ");
+    console.log(count);
+
+  });
 
   function buildRepo(repos) {
 
@@ -35,6 +71,7 @@ $(document).ready(function () {
 
     urlArr.push(commitURL);
     repoNameArr.push(repoName);
+
 
     var newLink = $('<p id="title-repo">')
       .append(((count+1)+'.  ')+repoName); 
@@ -49,10 +86,17 @@ $(document).ready(function () {
       counter++;
 
       return newEntry;
+
   }
 
-// ------------------------------------------------------------------------------------------------
 
+ }); // closes $(document).ready(function () {})
+  
+
+
+
+// // ------------------------------------------------------------------------------------------------
+  
   $(document).on("click", '.btn', function(e) {
     e.preventDefault();
 
@@ -62,10 +106,13 @@ $(document).ready(function () {
       var nameOfRepo = "";
 
       var id = $(this).attr('id');   // "btn0" "btn1"...
-      var num = parseInt(id[id.length - 1]);  // 0, 1, ...
+      // var num = parseInt(id[id.length - 1]);  // 0, 1, ...
+      var num = parseInt(id.replace("btn", ""));
       
       urltobeUsed = urlArr[num];
       nameOfRepo = repoNameArr[num];
+
+
 
       $.ajax({
 
@@ -109,7 +156,10 @@ $(document).ready(function () {
           }
 
 
-      }); // closes the 2nd ajax call within the click event.
+      }); // closes the ajax call within the click event.
+
+      $('h4').empty();
+      $('.modal-body').empty();
 
 
       function appendCommit(commitData) {
@@ -135,4 +185,4 @@ $(document).ready(function () {
 
   }); // closes the $(document).on click event.
 
- }); // closes the entire $(document).ready(function() {});
+//  
