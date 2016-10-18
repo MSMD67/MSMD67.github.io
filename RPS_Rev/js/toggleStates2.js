@@ -11,8 +11,7 @@ $(document).ready(function() {
         .addClass("btn-danger")
         .removeClass("btn-success")
         .attr("data-status", "off");
-     $(".image").toggle();
-     $("#start").toggle();
+     $("#container2").hide();
 
 
     } else {
@@ -23,7 +22,7 @@ $(document).ready(function() {
         .removeClass("btn-danger")
         .attr("data-status", "on");
         // .removeClass("bigEntrance");
-       $(".image").toggle();
+       $("#container2").toggle();
        location.reload(); 
       
       }
