@@ -1,0 +1,50 @@
+#buttonRow{
+  margin-top: 40px;
+}
+
+.addBorder{
+  border: 3px yellow solid; 
+
+}
+
+/*#rounds{
+  font-size: 20px;
+}*/
+
+#rock{
+  margin-top:23px;
+}
+
+h1, h3, h4, h5 {
+  text-align: center;
+}
+
+#pmodal{
+  text-align: center;
+  font-size: 20px;
+}
+
+#rock, #paper, #scissors {
+  
+  margin-left: 90px; 
+}
+
+#modal_bottom{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+img {
+  margin-left: 90px;
+}
+
+#top_right {
+  text-align: right;
+}
+
+#start{
+  margin-top:50px;
+  font-family: 'Shadows Into Light', cursive;;
+  font-size: 20px;
+}

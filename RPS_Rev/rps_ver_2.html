@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RPS</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/animations.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row" id="buttonRow">
+      <div class="col-xs-12" id="game-running">
+        <p id="top_right"></p>
+      </div>  
+    </div>    
+    <div class="row">   
+      <div class="col-xs-2 col-xs-offset-10">
+        <button class="btn btn-block btn-success" data-status="on" id="toggleBtn">ON</button>  
+      </div>
+    </div>
+  </div> <!-- container -->
+
+  <h1>Let Play Rock, Paper, Scissors!</h1>
+
+  <div class="container" id="container2">
+    <div class="row">
+      <div class="col-md-6">
+        <p id="rounds"></p>
+        <p id="ties"></p>
+        <p id="userScore"></p>
+        <p id="computerScore"></p>
+        <p id="computerChoice"></p>
+      </div>
+    </div>
+  <p id="start">Start by clicking on an image below.</p>
+    <div class="row" id="buttonRow">
+      <div class="col-md-4">
+        <img class="image" id="rock" src="imgs/rock.jpg">
+      </div>
+      <div class="col-md-4">
+        <img class="image" id="paper" src="imgs/paper.jpg">
+      </div>
+      <div class="col-md-4">
+        <img class="image" id="scissors" src="imgs/scissors.jpg">
+      </div>
+    </div>
+  </div><!-- container2 -->
+
+    <!-- MODAL -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title">LET'S SEE HERE:</h3>
+          </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xs-6" id="left">  
+                  <p id="pmodal">You clicked on:</p>
+                  <p id="user_Choice"></p>
+                </div> 
+                <div class="col-xs-6" id="right">
+                  <p id="pmodal">The computer chose:</p>
+                  <p id="computer_Choice"></p>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12" id="modal_bottom">
+                  </div> 
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="close_btn" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/toggleStates2.js"></script> 
+  <!-- // <script type="text/javascript" src="js/loops.js"></script> -->
+  <script type="text/javascript" src="js/rps2.js"></script>
+</body>
+</html>
