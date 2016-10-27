@@ -49,18 +49,18 @@ $(document).ready(function(){
 
         if (userChoice === computerChoice) 
             {   ties++;
-                return ("The result is a tie!");
+                // return ("The result is a tie!");
             } 
 
         else if(userChoice === "rock") 
             {
                 if(computerChoice === "scissors") 
                 {   userScore++;
-                    return ("rock wins");
+                    // return ("rock wins");
                 }
                 else 
                 {   computerScore++;
-                    return ("paper wins");
+                    // return ("paper wins");
                 }
             }
 
@@ -68,11 +68,11 @@ $(document).ready(function(){
             {
                 if(computerChoice === "rock") 
                 {   userScore++;
-                    return ("paper wins");
+                    // return ("paper wins");
                 }
                 else 
                 {   computerScore++;
-                    return ("scissors wins");
+                    // return ("scissors wins");
                 }
             }
 
@@ -80,11 +80,11 @@ $(document).ready(function(){
             {
                 if(computerChoice === "rock") 
                 {   computerScore++;
-                    return ("rock wins");
+                    // return ("rock wins");
                 }
                 else 
                 {   userScore++;
-                    return ("scissors wins");
+                    // return ("scissors wins");
                 }    
 
             }
