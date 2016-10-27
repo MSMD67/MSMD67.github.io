@@ -18,18 +18,27 @@ $(document).ready(function () {
     
     $('#item-form').submit(function (event) {
       event.preventDefault();  
-      count = 0;  
-     
+      count = 0; 
+
+    $('#infoAbout').remove();
     $('.panel').remove();
-    $('p').remove();
+    $('#modal').remove();
+    $('#title').remove();
     $('.avatar').remove();
+    $('h2').remove();
+
+    // $('.modal-body').empty();
+    // $('.modal-title').empty();
+
 
     var input = $('#userID').val();
-     
+    var URL =  "https://api.github.com/users/" + input + "/repos";
+
       $.ajax({
         type: "GET",
-        url: "https://api.github.com/users/" + input + "/repos",
+        url: URL,
         success: function(repoList) {
+
           var image = repoList[0].owner.avatar_url;
           var name =  repoList[0].owner.login;
 
@@ -39,28 +48,35 @@ $(document).ready(function () {
 
 
           for (var i = 0; i < repoList.length; i++) {
-            var repoEntry = buildRepo(repoList[i]);
+             var repoEntry = buildRepo(repoList[i]);
             $(".container").append(repoEntry);
 
           }
 
+      },
+
+
+        error: function() {
+
+            alert("ERROR.  PLEASE TRY AGAIN.");
+
+        // error: function(jqXHR, textstatus, errorThrown) {
+        //     console.log(teststatus);
+        //     console.log(jqXHR);
+        //     console.log(errorThrown);
+        //     alert("ERROR");
+
         },
 
-        error: function(jqXHR, textstatus, errorThrown) {
-            console.log(teststatus);
-            console.log(jqXHR);
-            console.log(errorThrown);
-        },
 
 
        }); // closes the first AJAX call.
 
 
-
-    $('#userID').val('');
-    $('#userID').focus;
-    console.log("after submit: ");
-    console.log(count);
+        $('#userID').val('');
+        $('#userID').focus();
+        console.log("after submit: ");
+        console.log(count);
 
   });
 
@@ -74,7 +90,7 @@ $(document).ready(function () {
 
 
     var newLink = $('<p id="title-repo">')
-      .append(((count+1)+'.  ')+repoName); 
+      .append(((count+1)+'.   ')+repoName); 
       count++;
     
 
@@ -92,9 +108,7 @@ $(document).ready(function () {
 
  }); // closes $(document).ready(function () {})
   
-
-
-
+  
 // // ------------------------------------------------------------------------------------------------
   
   $(document).on("click", '.btn', function(e) {
@@ -107,6 +121,7 @@ $(document).ready(function () {
 
       var id = $(this).attr('id');   // "btn0" "btn1"...
       // var num = parseInt(id[id.length - 1]);  // 0, 1, ...
+      console.log(id);
       var num = parseInt(id.replace("btn", ""));
       
       urltobeUsed = urlArr[num];
@@ -157,6 +172,7 @@ $(document).ready(function () {
 
 
       }); // closes the ajax call within the click event.
+
 
       $('h4').empty();
       $('.modal-body').empty();

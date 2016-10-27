@@ -82,9 +82,9 @@ img {
   color: white;
 }
 
-/*p {
+p {
 margin-top: 5px;  
-}*/
+}
 
 #end-list {
   text-transform: uppercase;
@@ -111,4 +111,9 @@ margin-top: 5px;
     text-align: center;
     font-size: 35px;
     font-family: 'Shadows Into Light', cursive;
+}
+
+#infoAbout {
+    margin-top: -28px;
+    margin-left: 202px;
 }
