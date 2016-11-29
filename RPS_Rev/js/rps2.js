@@ -204,7 +204,7 @@ $(document).ready(function(){
                            .removeClass("btn-success");
 
             var modal = 
-              '<h2>After 7 rounds, here are the results:</h2>'+
+              '<h2>After 3 rounds, here are the results:</h2>'+
               '<br>' +
               '<p id="modal_close">Ties: ' + ties + '</p>' +
               '<p id="modal_close">Your score:  ' + userScore + '</p>' +
