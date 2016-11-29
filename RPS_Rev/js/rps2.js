@@ -190,7 +190,7 @@ $(document).ready(function(){
         $('#rounds').html("Round number: " + rounds);
         $('#ties').html("Ties: " + ties);
 
-        if (rounds === 8) {
+        if (rounds === 4) {
             
             $("#left").hide();
             $("#right").hide();
