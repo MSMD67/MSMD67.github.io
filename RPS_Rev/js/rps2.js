@@ -210,7 +210,7 @@ $(document).ready(function(){
               '<p id="modal_close">Your score:  ' + userScore + '</p>' +
               '<p id="modal_close">Computer score:  ' + computerScore + '</p>' +              
               '<br>' + 
-              '<p>Click close then click off button to restart game.';
+              '<p>Click close, then click off button to restart game.';
 
               
             $('#modal_bottom').empty();
